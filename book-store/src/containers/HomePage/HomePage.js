@@ -11,18 +11,10 @@ import TableRow from '@mui/material/TableRow';
 import Container from '@mui/material/Container';
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import {
-    makeStyles,
-    Grid,
-    Paper,
-    Typography,
-    ButtonBase,
+    makeStyles
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-        marginTop: 22
-    },
     paper: {
         padding: theme.spacing(2),
         margin: '0 auto 22px auto',
@@ -82,7 +74,7 @@ function HomePage() {
                                             <img className={classes.img} alt={book.title} src={book.thumbnailUrl}></img>
                                         </TableCell>
                                         <TableCell style={{ width: 200 }}>
-                                            {book.title}
+                                            <Link to={`/${book.isbn}`}>{book.title}</Link>
                                         </TableCell>
                                         <TableCell style={{ width: 100 }}>
                                             {book.authors.join(", ")}
