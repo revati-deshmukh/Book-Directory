@@ -6,15 +6,17 @@ import {
 } from 'react-router-dom';
 import {
   EditBookPage,
-  HomePage
+  HomePage,
+  AddBookPage
 } from './containers';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/:id" element={<EditBookPage />} />
+        <Route path="/addbook" element={<AddBookPage />} />
       </Routes>
     </BrowserRouter>
   );
