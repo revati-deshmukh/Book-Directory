@@ -21,10 +21,16 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 20,
     },
     addButton: {
-        marginLeft: 20
+        marginLeft: 20,
+        backgroundColor: '#36919af7'
     },
     fieldLabel: {
         paddingBottom: theme.spacing(1)
+    },
+    updateButton: {
+        float: 'right',
+        marginRight: 80,
+        backgroundColor: '#3aaea6'
     }
 }));
 
@@ -142,7 +148,7 @@ function EditBookForm(props) {
                                 </FieldArray>
                             </Grid>
                             <Grid item xs={12}>
-                                <Button variant="contained" color="primary" type="submit">
+                                <Button variant="contained" color="primary" type="submit" className={classes.updateButton}>
                                     Update
                                 </Button>
                             </Grid>
