@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBook, updateBook, deleteBook } from './EditBookPage.duck';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
     makeStyles,
     Paper,
@@ -22,8 +22,10 @@ const useStyles = makeStyles((theme) => ({
     description: {
         padding: '0 24px'
     },
-    deleteButton: {
-        marginTop: 20,
+    cancelButton: {
+        marginTop: -37,
+        float: 'right',
+        color: '#FF0000'
     }
 }));
 
@@ -40,6 +42,7 @@ function EditBookPage(props) {
     } = useSelector(state => state.EditBookPage);
 
     const classes = useStyles();
+    const navigate = useNavigate();
 
     const { id } = useParams();
 
@@ -64,11 +67,12 @@ function EditBookPage(props) {
                         initialValues={{ ...book }}
                         onSubmit={values => dispatch(updateBook(values))} />
 
-                    <Button variant="contained" color="secondary"
-                        onClick={() => dispatch(deleteBook(book.isbn))}
-                        className={classes.deleteButton}>
-                        Delete
+                    <Button color="secondary"
+                        onClick={() => navigate('/')}
+                        className={classes.cancelButton}>
+                        Cancel
                     </Button>
+
                 </Paper>
             ) : null}
         </div>
