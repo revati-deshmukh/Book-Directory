@@ -12,6 +12,7 @@ import TableRow from '@mui/material/TableRow';
 import TablePagination from '@mui/material/TablePagination';
 import Container from '@mui/material/Container';
 import ReactReadMoreReadLess from "react-read-more-read-less";
+import Rating from '@mui/material/Rating';
 import {
     makeStyles,
     Button
@@ -60,6 +61,7 @@ function HomePage() {
     const dispatch = useDispatch();
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const [rating, setRating] = useState(0)
 
     const {
         fetchBooksInProgress,
@@ -78,11 +80,15 @@ function HomePage() {
     };
 
     const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 5));
+        setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
     };
 
     const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - books.length) : 0;
+
+    const handleRating = (rate) => {
+        setRating(rate)
+    }
 
     return (
         <div>
@@ -106,6 +112,7 @@ function HomePage() {
                                 <StyledTableCell align="left">Published</StyledTableCell>
                                 <StyledTableCell align="left">Categories</StyledTableCell>
                                 <StyledTableCell align="left">Description</StyledTableCell>
+                                <StyledTableCell align="left">Ratings</StyledTableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -125,10 +132,10 @@ function HomePage() {
                                             <TableCell style={{ width: 150 }}>
                                                 {book.publishedDate}
                                             </TableCell>
-                                            <TableCell style={{ width: 160 }}>
+                                            <TableCell style={{ width: 120 }}>
                                                 {book.categories.join(", ")}
                                             </TableCell>
-                                            <TableCell style={{ width: 200 }}>
+                                            <TableCell style={{ width: 240 }}>
                                                 <ReactReadMoreReadLess
                                                     charLimit={100}
                                                     readMoreText={"Read more ▼"}
@@ -136,6 +143,12 @@ function HomePage() {
                                                 >
                                                     {book.shortDescription}
                                                 </ReactReadMoreReadLess>
+                                            </TableCell>
+                                            <TableCell style={{ width: 80 }}>
+                                                <Rating name="half-rating-read"
+                                                    value={book.ratings}
+                                                    precision={0.5}
+                                                    readOnly />
                                             </TableCell>
                                         </TableRow>
                                     );

@@ -13,7 +13,8 @@ module.exports = [
         ],
         "categories": [
             "Thriller"
-        ]
+        ],
+        "ratings": "3.5"
     },
     {
         "title": "Wings of Fire: An Autobiography",
@@ -29,7 +30,8 @@ module.exports = [
         ],
         "categories": [
             "Autobiography"
-        ]
+        ],
+        "ratings": "5.0"
     },
     {
         "title": "The Spanish Love Deception",
@@ -45,7 +47,8 @@ module.exports = [
         ],
         "categories": [
             "Romance"
-        ]
+        ],
+        "ratings": "4.0"
     },
     {
         "title": "Wherabouts",
@@ -61,7 +64,8 @@ module.exports = [
         ],
         "categories": [
             "Fiction"
-        ]
+        ],
+        "ratings": "3.7"
     },
     {
         "title": "Breath: The New Science of a Lost Art",
@@ -77,7 +81,8 @@ module.exports = [
         ],
         "categories": [
             "Notification"
-        ]
+        ],
+        "ratings": "4.1"
     },
     {
         "title": "Mrutyunjay",
@@ -93,7 +98,8 @@ module.exports = [
         ],
         "categories": [
             "History"
-        ]
+        ],
+        "ratings": "4.5"
     },
     {
         "title": "The Miracle of Mindfulness: An Introduction to the Practice of Meditation",
@@ -109,7 +115,8 @@ module.exports = [
         ],
         "categories": [
             "Notification"
-        ]
+        ],
+        "ratings": "4.1"
     },
     {
         "title": "बटाट्याची चाळ",
@@ -126,7 +133,8 @@ module.exports = [
         "categories": [
             "Humor",
             "Fiction"
-        ]
+        ],
+        "ratings": "4.3"
     },
     {
         "title": "Only When It's Us",
@@ -142,7 +150,8 @@ module.exports = [
         ],
         "categories": [
             "Romance"
-        ]
+        ],
+        "ratings": "4.0"
     },
     {
         "title": "The Power of Your Subconscious Mind",
@@ -159,6 +168,7 @@ module.exports = [
         ],
         "categories": [
             "Self Help"
-        ]
+        ],
+        "ratings": "4.1"
     }
 ];
